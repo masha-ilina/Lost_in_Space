@@ -19,6 +19,7 @@ public class Player implements Serializable {
     private double bestTime;
     private int health;
     private String description;
+    private int[] damage;
 
     public Player() {
     }
@@ -53,6 +54,14 @@ public class Player implements Serializable {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public int[] getDamgage() {
+        return damage;
+    }
+
+    public void setDamage(int[] damage) {
+        this.damage = damage;
     }
 
     @Override
