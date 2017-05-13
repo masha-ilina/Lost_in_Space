@@ -1,6 +1,7 @@
 package byui.cit260.lost_in_space.model;
 
 import java.io.Serializable;
+import java.util.Arrays;
 import java.util.Objects;
 
 /**
@@ -11,6 +12,7 @@ public class Alien implements Serializable {
 
     private String name;
     private String description;
+    private String status;
     private int[] damage;
     private int health;
 
@@ -48,4 +50,58 @@ public class Alien implements Serializable {
     public void setDamage(int[] damage) {
         this.damage = damage;
     }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    @Override
+    public String toString() {
+        return "Actor{" + "name=" + name + ", description=" + description + ", health=" + health + ", damage=" + damage[0] + '.' + damage[1] + '}';
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        hash = 23 * hash + Objects.hashCode(this.name);
+        hash = 23 * hash + Objects.hashCode(this.description);
+        hash = 23 * hash + (damage[0] + damage[1]);
+        hash = 23 * hash + health;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Alien other = (Alien) obj;
+        if (this.health != other.health) {
+            return false;
+        }
+        if (!Objects.equals(this.name, other.name)) {
+            return false;
+        }
+        if (!Objects.equals(this.description, other.description)) {
+            return false;
+        }
+        if (!Objects.equals(this.status, other.status)) {
+            return false;
+        }
+        if (!Arrays.equals(this.damage, other.damage)) {
+            return false;
+        }
+        return true;
+    }
+
 }
