@@ -42,6 +42,15 @@ public class Actor implements Serializable {
         this.description = description;
     }
 
+    public int[] getCoordinates() {
+        return coordinates;
+    }
+
+    public void setCoordinates(int[] coordinates) {
+        this.coordinates[0] = coordinates[0];
+        this.coordinates[1] = coordinates[1];
+    }
+
     @Override
     public int hashCode() {
         int hash = 5;
@@ -51,7 +60,7 @@ public class Actor implements Serializable {
 
     @Override
     public String toString() {
-        return "Actor{" + "name=" + name + ", description="+ description + ", status="+status+", health="+health+", coordinates="+coordinates[0]+","+coordinates[1]+'}';
+        return "Actor{" + "name=" + name + ", description=" + description + ", status=" + status + ", health=" + health + ", coordinates=" + coordinates[0] + "," + coordinates[1] + '}';
     }
 
     @Override
@@ -73,4 +82,3 @@ public class Actor implements Serializable {
     }
 
 }
-
