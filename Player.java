@@ -18,6 +18,7 @@ public class Player implements Serializable {
     private String name;
     private double bestTime;
     private int health;
+    private String description;
 
     public Player() {
     }
@@ -44,6 +45,14 @@ public class Player implements Serializable {
 
     public void setHealth(int health) {
         this.health = health;
+    }
+
+    public String getDescription() {
+        return name;
+    }
+
+    public void setDescription(String name) {
+        this.name = name;
     }
 
     @Override
