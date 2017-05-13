@@ -7,21 +7,21 @@ package byui.cit260.lost_in_space.model;
 
 import java.io.Serializable;
 import java.util.Objects;
+
 /**
  *
  * @author Marya
  */
 public class Player implements Serializable {
-    
+
     //class instance variables 
     private String name;
     private double bestTime;
+    private int health;
 
     public Player() {
     }
 
-    
-    
     public String getName() {
         return name;
     }
@@ -38,7 +38,14 @@ public class Player implements Serializable {
         this.bestTime = bestTime;
     }
 
-       
+    public int getHealth() {
+        return health;
+    }
+
+    public void setHealth(int health) {
+        this.health = health;
+    }
+
     @Override
     public int hashCode() {
         int hash = 5;
@@ -72,8 +79,5 @@ public class Player implements Serializable {
         }
         return true;
     }
-
-    
-    
 
 }
