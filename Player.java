@@ -48,11 +48,11 @@ public class Player implements Serializable {
     }
 
     public String getDescription() {
-        return name;
+        return description;
     }
 
-    public void setDescription(String name) {
-        this.name = name;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     @Override
