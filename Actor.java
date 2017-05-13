@@ -51,7 +51,7 @@ public class Actor implements Serializable {
 
     @Override
     public String toString() {
-        return "Actor{" + "name=" + name + ", description="+ description + ""+""+'}';
+        return "Actor{" + "name=" + name + ", description="+ description + ", status="+status+", health="+health+", coordinates="+coordinates[0]+","+coordinates[1]+'}';
     }
 
     @Override
@@ -65,10 +65,7 @@ public class Actor implements Serializable {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final Player other = (Player) obj;
-        if (Double.doubleToLongBits(this.bestTime) != Double.doubleToLongBits(other.bestTime)) {
-            return false;
-        }
+        final Actor other = (Actor) obj;
         if (!Objects.equals(this.name, other.name)) {
             return false;
         }
@@ -76,4 +73,4 @@ public class Actor implements Serializable {
     }
 
 }
-}
+
