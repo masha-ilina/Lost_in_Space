@@ -1,3 +1,8 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package byui.cit260.lost_in_space.model;
 
 import java.io.Serializable;
@@ -5,17 +10,18 @@ import java.util.Objects;
 
 /**
  *
- * @author Jake
+ * @author Marya
  */
-public class Actor implements Serializable {
+public class Player implements Serializable {
 
+    //class instance variables 
     private String name;
-    private String description;
-    private String status;
+    private double bestTime;
     private int health;
-    private int[] coordinates;
+    private String description;
+    private int[] damage;
 
-    public Actor() {
+    public Player() {
     }
 
     public String getName() {
@@ -24,6 +30,14 @@ public class Actor implements Serializable {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public double getBestTime() {
+        return bestTime;
+    }
+
+    public void setBestTime(double bestTime) {
+        this.bestTime = bestTime;
     }
 
     public int getHealth() {
@@ -42,25 +56,25 @@ public class Actor implements Serializable {
         this.description = description;
     }
 
-    public int[] getCoordinates() {
-        return coordinates;
+    public int[] getDamgage() {
+        return damage;
     }
 
-    public void setCoordinates(int[] coordinates) {
-        this.coordinates[0] = coordinates[0];
-        this.coordinates[1] = coordinates[1];
+    public void setDamage(int[] damage) {
+        this.damage = damage;
     }
 
     @Override
     public int hashCode() {
         int hash = 5;
         hash = 23 * hash + Objects.hashCode(this.name);
+        hash = 23 * hash + (int) (Double.doubleToLongBits(this.bestTime) ^ (Double.doubleToLongBits(this.bestTime) >>> 32));
         return hash;
     }
 
     @Override
     public String toString() {
-        return "Actor{" + "name=" + name + ", description=" + description + ", status=" + status + ", health=" + health + ", coordinates=" + coordinates[0] + "," + coordinates[1] + '}';
+        return "Player{" + "name=" + name + ", bestTime=" + bestTime + '}';
     }
 
     @Override
@@ -74,7 +88,10 @@ public class Actor implements Serializable {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final Actor other = (Actor) obj;
+        final Player other = (Player) obj;
+        if (Double.doubleToLongBits(this.bestTime) != Double.doubleToLongBits(other.bestTime)) {
+            return false;
+        }
         if (!Objects.equals(this.name, other.name)) {
             return false;
         }

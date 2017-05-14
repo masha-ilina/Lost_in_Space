@@ -1,22 +1,21 @@
 package byui.cit260.lost_in_space.model;
 
 import java.io.Serializable;
-import java.util.Arrays;
 import java.util.Objects;
 
 /**
  *
  * @author Jake
  */
-public class Alien implements Serializable {
+public class Actor implements Serializable {
 
     private String name;
     private String description;
     private String status;
-    private int[] damage;
+    private int[] coordinates = new int[2];
     private int health;
 
-    public Alien() {
+    public Actor() {
     }
 
     public String getName() {
@@ -43,35 +42,25 @@ public class Alien implements Serializable {
         this.description = description;
     }
 
-    public int[] getDamgage() {
-        return damage;
+    public int[] getCoordinates() {
+        return coordinates;
     }
 
-    public void setDamage(int[] damage) {
-        this.damage = damage;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    @Override
-    public String toString() {
-        return "Actor{" + "name=" + name + ", description=" + description + ", health=" + health + ", damage=" + damage[0] + '.' + damage[1] + '}';
+    public void setCoordinates(int[] coordinates) {
+        this.coordinates[0] = coordinates[0];
+        this.coordinates[1] = coordinates[1];
     }
 
     @Override
     public int hashCode() {
         int hash = 5;
         hash = 23 * hash + Objects.hashCode(this.name);
-        hash = 23 * hash + Objects.hashCode(this.description);
-        hash = 23 * hash + (damage[0] + damage[1]);
-        hash = 23 * hash + health;
         return hash;
+    }
+
+    @Override
+    public String toString() {
+        return "Actor{" + "name=" + name + ", description=" + description + ", status=" + status + ", health=" + health + ", coordinates=" + coordinates[0] + "," + coordinates[1] + '}';
     }
 
     @Override
@@ -85,20 +74,8 @@ public class Alien implements Serializable {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final Alien other = (Alien) obj;
-        if (this.health != other.health) {
-            return false;
-        }
+        final Actor other = (Actor) obj;
         if (!Objects.equals(this.name, other.name)) {
-            return false;
-        }
-        if (!Objects.equals(this.description, other.description)) {
-            return false;
-        }
-        if (!Objects.equals(this.status, other.status)) {
-            return false;
-        }
-        if (!Arrays.equals(this.damage, other.damage)) {
             return false;
         }
         return true;

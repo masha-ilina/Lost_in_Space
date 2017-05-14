@@ -9,4 +9,9 @@ import java.util.Objects;
  */
 public class Item implements Serializable {
     
+    private String type;
+    private String description;
+    private int quantity;
+    private int[] damage = new int[2];
+    
 }
