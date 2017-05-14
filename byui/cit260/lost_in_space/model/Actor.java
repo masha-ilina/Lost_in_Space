@@ -26,6 +26,14 @@ public class Actor implements Serializable {
         this.name = name;
     }
 
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
     public int getHealth() {
         return health;
     }
@@ -46,9 +54,9 @@ public class Actor implements Serializable {
         return coordinates;
     }
 
-    public void setCoordinates(int[] coordinates) {
-        this.coordinates[0] = coordinates[0];
-        this.coordinates[1] = coordinates[1];
+    public void setCoordinates(int x, int y) {
+        this.coordinates[0] = x;
+        this.coordinates[1] = y;
     }
 
     @Override

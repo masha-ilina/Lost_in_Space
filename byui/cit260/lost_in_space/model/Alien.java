@@ -47,8 +47,9 @@ public class Alien implements Serializable {
         return damage;
     }
 
-    public void setDamage(int[] damage) {
-        this.damage = damage;
+    public void setDamage(int min, int max) {
+        this.damage[0] = min;
+        this.damage[1] = max;
     }
 
     public String getStatus() {
@@ -61,7 +62,7 @@ public class Alien implements Serializable {
 
     @Override
     public String toString() {
-        return "Actor{" + "name=" + name + ", description=" + description + ", health=" + health + ", damage=" + damage[0] + '.' + damage[1] + '}';
+        return "Alien{" + "name=" + name + ", description=" + description + ", health=" + health + ", damage=" + damage[0] + "," + damage[1] + '}';
     }
 
     @Override

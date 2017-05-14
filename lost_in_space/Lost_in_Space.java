@@ -5,11 +5,7 @@
  */
 package lost_in_space;
 
-import byui.cit260.lost_in_space.model.Player;
-import byui.cit260.lost_in_space.model.Item;
-import byui.cit260.lost_in_space.model.Alien;
-import byui.cit260.lost_in_space.model.Ship;
-import byui.cit260.lost_in_space.model.Actor;
+import byui.cit260.lost_in_space.model.*;
 
 /**
  * @author Jake
@@ -23,27 +19,58 @@ public class Lost_in_Space {
     public static void main(String[] args) {
         // Player Class
         Player playerOne = new Player();
-        
+
         playerOne.setName("John Smith");
         playerOne.setBestTime(7.00);
-        
+        playerOne.setDescription("Some dude, totally not you. You look way cooler.");
+        playerOne.setHealth(200);
+        playerOne.setDamage(10, 20);
+
         String playerInfo = playerOne.toString();
         System.out.println(playerInfo);
-        
+
         // Item Class
         Item laser = new Item();
         
+        laser.setType("Weapon");
+        laser.setName("laser");
+        laser.setQuantity(1);
+        laser.setDamage(5, 10);
+        
+        System.out.println(laser.toString());
+
         // Alien Class
         Alien zoidberg = new Alien();
-        
-       zoidberg.setName("Dr.Zoidberg");
-       zoidberg.
-        
+
+        zoidberg.setName("Dr.Zoidberg");
+        zoidberg.setDescription("A smelly crab alien.");
+        zoidberg.setStatus("Smelly");
+        zoidberg.setHealth(200);
+        zoidberg.setDamage(10, 20);
+
+        System.out.println(zoidberg.toString());
+
         // Ship CLass
         Ship express = new Ship();
-        
+
+        express.setName("Express");
+        express.setDescription("A humble delivery ship.");
+        express.setHealth(10);
+        express.setFuelLevel(500);
+        express.setCoordinates(50, 60);
+
+        System.out.println(express.toString());
+
         // Actor Class
         Actor generic = new Actor();
+
+        generic.setName("person");
+        generic.setDescription("Some dude.");
+        generic.setStatus("Normal");
+        generic.setCoordinates(10,80);
+        generic.setHealth(150);
+        
+        System.out.println(generic.toString());
     }
-    
+
 }

@@ -19,7 +19,7 @@ public class Player implements Serializable {
     private double bestTime;
     private int health;
     private String description;
-    private int[] damage;
+    private int[] damage = new int[2];
 
     public Player() {
     }
@@ -60,8 +60,9 @@ public class Player implements Serializable {
         return damage;
     }
 
-    public void setDamage(int[] damage) {
-        this.damage = damage;
+    public void setDamage(int min, int max) {
+        this.damage[0] = min;
+        this.damage[1] = max;
     }
 
     @Override
@@ -74,7 +75,7 @@ public class Player implements Serializable {
 
     @Override
     public String toString() {
-        return "Player{" + "name=" + name + ", bestTime=" + bestTime + '}';
+        return "Player{" + "name=" + name + ", bestTime=" + bestTime + ", health=" + health + ", description=" + description + ", damage=" + damage[0]+", "+damage[1] + '}';
     }
 
     @Override

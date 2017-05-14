@@ -37,6 +37,35 @@ public class Ship implements Serializable {
         return description;
     }
 
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public int getHealth() {
+        return health;
+    }
+
+    public void setHealth(int health) {
+        this.health = health;
+    }
+
+    public int getFuelLevel() {
+        return fuelLevel;
+    }
+
+    public void setFuelLevel(int fuelLevel) {
+        this.fuelLevel = fuelLevel;
+    }
+
+    public int[] getCoordinates() {
+        return coordinates;
+    }
+
+    public void setCoordinates(int x, int y) {
+        this.coordinates[0] = x;
+        this.coordinates[1] = y;
+    }
+
     @Override
     public int hashCode() {
         int hash = 7;
@@ -84,31 +113,7 @@ public class Ship implements Serializable {
 
     @Override
     public String toString() {
-        return "Ship{" + "name=" + name + ", status=" + status + ", description=" + description + ", health=" + health + ", fuelLevel=" + fuelLevel + ", coordinates=" + coordinates + '}';
+        return "Ship{" + "name=" + name + ", status=" + status + ", description=" + description + ", health=" + health + ", fuelLevel=" + fuelLevel + ", coordinates=" + coordinates[0] + ", " + coordinates[1] + '}';
     }
 
-    public int getHealth() {
-        return health;
-    }
-
-    public void setHealth(int health) {
-        this.health = health;
-    }
-
-    public int getFuelLevel() {
-        return fuelLevel;
-    }
-
-    public void setFuelLevel(int fuelLevel) {
-        this.fuelLevel = fuelLevel;
-    }
-
-    public int[] getCoordinates() {
-        return coordinates;
-    }
-
-    public void setCoordinates(int[] coordinates) {
-        this.coordinates = coordinates;
-    }
-    
 }
