@@ -26,6 +26,24 @@ public class LostInSpace {
         String mapInfo = mapOne.toString();
         System.out.println(mapInfo);
         
+        // EncounterScene class
+        
+        EncounterScene encounterSceneOne = new EncounterScene();
+        
+        encounterSceneOne.setAttribute("Tony Etienne");
+        
+        String encounterSceneInfo = encounterSceneOne.toString();
+        System.out.println(encounterSceneInfo);
+        
+        // Combat class
+        
+        Combat combatOne = new Combat();
+        
+        combatOne.setPlayerLightAttack("Tony Etienne");
+        
+        String combatInfo = combatOne.toString();
+        System.out.println(combatInfo);
+        
     }
     
 }
