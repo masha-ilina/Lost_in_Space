@@ -12,8 +12,8 @@ public class Actor implements Serializable {
     private String name;
     private String description;
     private String status;
+    private int[] coordinates = new int[2];
     private int health;
-    private int[] coordinates;
 
     public Actor() {
     }

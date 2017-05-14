@@ -13,7 +13,7 @@ public class Alien implements Serializable {
     private String name;
     private String description;
     private String status;
-    private int[] damage;
+    private int[] damage = new int[2];
     private int health;
 
     public Alien() {
@@ -71,6 +71,7 @@ public class Alien implements Serializable {
         hash = 23 * hash + Objects.hashCode(this.description);
         hash = 23 * hash + (damage[0] + damage[1]);
         hash = 23 * hash + health;
+        hash = 23 * hash + Objects.hashCode(this.status);
         return hash;
     }
 
