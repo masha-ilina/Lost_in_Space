@@ -71,6 +71,42 @@ public class Lost_in_Space {
         generic.setHealth(150);
         
         System.out.println(generic.toString());
+        
+        // Game Class
+        Game lis = new Game();
+        lis.setTotalTime(60.00);
+        lis.setNoPeople(2);
+        
+        String gameInfo = lis.toString();
+        System.out.println(gameInfo);
+        
+        // BasicScene Class
+        BasicScene bs = new BasicScene();
+        bs.setBlocked(true);
+        bs.setDescription("Let's go!");
+        bs.setSymbol("^");
+                
+        String bsInfo = bs.toString();
+        System.out.println(bsInfo); 
+        
+        // Puzzle Class
+        Puzzle puzzle = new Puzzle();
+        puzzle.setAmountOfFuel(0.75);
+        
+        String puzzleInfo = puzzle.toString();
+        System.out.println(puzzleInfo);
+        
+        // Location Class
+        Location loc = new Location();
+        
+        loc.setColumn(4);
+        loc.setRow(2);
+        loc.setVisited(false);
+        loc.setDescription("Mars!");
+        loc.setAmountRemaining(5);
+        
+        String locationInfo = loc.toString();
+        System.out.println(locationInfo);
     }
 
 }
