@@ -31,12 +31,12 @@ public class Lost_in_Space {
 
         // Item Class
         Item laser = new Item();
-        
+
         laser.setType("Weapon");
         laser.setName("laser");
         laser.setQuantity(1);
         laser.setDamage(5, 10);
-        
+
         System.out.println(laser.toString());
 
         // Alien Class
@@ -65,48 +65,75 @@ public class Lost_in_Space {
         Actor generic = new Actor();
 
         generic.setName("person");
-        generic.setDescription("Some dude.");
+        generic.setDescription("Just some guy who always wants you to do some repetitive task for him");
         generic.setStatus("Normal");
-        generic.setCoordinates(10,80);
+        generic.setCoordinates(10, 80);
         generic.setHealth(150);
-        
+
         System.out.println(generic.toString());
-        
+
         // Game Class
         Game lis = new Game();
         lis.setTotalTime(60.00);
         lis.setNoPeople(2);
-        
+
         String gameInfo = lis.toString();
         System.out.println(gameInfo);
-        
+
         // BasicScene Class
         BasicScene bs = new BasicScene();
         bs.setBlocked(true);
         bs.setDescription("Let's go!");
         bs.setSymbol("^");
-                
+
         String bsInfo = bs.toString();
-        System.out.println(bsInfo); 
-        
+        System.out.println(bsInfo);
+
         // Puzzle Class
         Puzzle puzzle = new Puzzle();
         puzzle.setAmountOfFuel(0.75);
-        
+
         String puzzleInfo = puzzle.toString();
         System.out.println(puzzleInfo);
-        
+
         // Location Class
         Location loc = new Location();
-        
+
         loc.setColumn(4);
         loc.setRow(2);
         loc.setVisited(false);
         loc.setDescription("Mars!");
         loc.setAmountRemaining(5);
-        
+
         String locationInfo = loc.toString();
         System.out.println(locationInfo);
+/*
+        Map mapOne = new Map();
+
+        mapOne.setDescription("Tony Etienne");
+        mapOne.setRowCount(6.00);
+        mapOne.setColumnCount(5.00);
+        mapOne.setCurrentRow(6.00);
+        mapOne.setCurrentColumn(5.00);
+
+        String mapInfo = mapOne.toString();
+        System.out.println(mapInfo);
+*/
+        // EncounterScene class
+        EncounterScene encounterSceneOne = new EncounterScene();
+
+        encounterSceneOne.setAttribute("Tony Etienne");
+
+        String encounterSceneInfo = encounterSceneOne.toString();
+        System.out.println(encounterSceneInfo);
+
+        // Combat class
+        Combat combatOne = new Combat();
+
+        combatOne.setPlayerLightAttack("Tony Etienne");
+
+        String combatInfo = combatOne.toString();
+        System.out.println(combatInfo);
     }
 
 }
